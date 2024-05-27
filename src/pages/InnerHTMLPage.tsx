@@ -11,10 +11,8 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { useParams } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
-import './Page.css';
 import { InnerHTML } from '../../lib';
+import MarkDown from '../components/MarkDown';
 
 const InnerHTMLPage: React.FC = () => {
   const rawHTML = `
@@ -44,19 +42,21 @@ const InnerHTMLPage: React.FC = () => {
       <IonContent>
         <IonCard mode="ios">
           <IonCardHeader>
-            <IonCardTitle>HTML as string</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <code>{rawHTML}</code>
-          </IonCardContent>
-        </IonCard>
-
-        <IonCard mode="ios">
-          <IonCardHeader>
-            <IonCardTitle>Render as HTML</IonCardTitle>
+            <IonCardTitle>Render string to HTML</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
             <InnerHTML>{rawHTML}</InnerHTML>
+            <MarkDown
+              markdown={`~~~js
+import { InnerHTML } from '@codesyntax/ionic-react-utils';
+~~~`}
+            />
+            <MarkDown
+              markdown={`~~~js
+const rawHTML = ${rawHTML};
+<InnerHTML>{rawHTML}</InnerHTML>
+~~~`}
+            />
           </IonCardContent>
         </IonCard>
 
@@ -66,6 +66,17 @@ const InnerHTMLPage: React.FC = () => {
           </IonCardHeader>
           <IonCardContent>
             <InnerHTML url="/test.html" />
+
+            <MarkDown
+              markdown={`~~~js
+import { InnerHTML } from '@codesyntax/ionic-react-utils';
+~~~`}
+            />
+            <MarkDown
+              markdown={`~~~js
+<InnerHTML url="https://somepage.io/test." />
+~~~`}
+            />
           </IonCardContent>
         </IonCard>
       </IonContent>

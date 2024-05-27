@@ -43,4 +43,13 @@ export default defineConfig(({ mode }) => {
       },
     };
   }
+
+  return {
+    plugins: [react(), legacy()],
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      setupFiles: './src/setupTests.ts',
+    },
+  };
 });

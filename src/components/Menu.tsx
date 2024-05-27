@@ -37,7 +37,7 @@ const appPages: AppPage[] = [
   },
   {
     title: 'IonPasswordInput',
-    url: '/folder/IonPasswordInput',
+    url: '/docs/ion-password-input',
     icon: eyeOutline,
   },
   {

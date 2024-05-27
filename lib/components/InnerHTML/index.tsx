@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import './test.css';
-
 export interface InnerHTMLProps {
   children?: string;
   url?: string;
@@ -26,4 +24,4 @@ const InnerHTML: React.FC<InnerHTMLProps> = ({ children = '', url }) => {
   return <div dangerouslySetInnerHTML={{ __html: html }} />;
 };
 
-export {InnerHTML};
+export { InnerHTML };

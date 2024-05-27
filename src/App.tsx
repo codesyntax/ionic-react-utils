@@ -34,6 +34,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import InnerHTMLPage from './pages/InnerHTMLPage';
+import IonPasswordInputPage from './pages/IonPasswordInputPage';
 
 setupIonicReact();
 
@@ -52,6 +53,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/docs/inner-html" exact={true}>
               <InnerHTMLPage />
+            </Route>
+            <Route path="/docs/ion-password-input" exact={true}>
+              <IonPasswordInputPage />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
