@@ -6,6 +6,6 @@ export {
 } from './hooks/useIonHeaderCollapse';
 
 export {
-  useIonParallaxHeader,
-  type UseIonParallaxHeaderInput,
-} from './hooks/useIonParallaxHeader';
+  useIonHeaderParallax,
+  type UseIonHeaderParallaxInput,
+} from './hooks/useIonHeaderParallax';

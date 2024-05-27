@@ -27,12 +27,6 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'IonPhotoViewer',
-    url: '/folder/IonPhotoViewer',
-    icon: imageOutline,
-    type: 'component',
-  },
-  {
     title: 'IonPasswordInput',
     url: '/docs/ion-password-input',
     icon: eyeOutline,
@@ -51,8 +45,8 @@ const appPages: AppPage[] = [
     type: 'component',
   },
   {
-    title: 'useIonParallaxHeader',
-    url: '/docs/use-ion-parallax-header',
+    title: 'useIonHeaderParallax',
+    url: '/docs/use-ion-header-parallax',
     icon: albumsOutline,
     type: 'hook',
   },
@@ -60,6 +54,12 @@ const appPages: AppPage[] = [
     title: 'useIonHeaderCollapse',
     url: '/docs/use-ion-header-collapse',
     icon: chevronCollapseOutline,
+    type: 'hook',
+  },
+  {
+    title: 'usePinchToZoom',
+    url: '/docs/use-pinch-to-zoom',
+    icon: imageOutline,
     type: 'hook',
   },
 ];

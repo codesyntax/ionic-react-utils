@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type UseIonParallaxHeaderInput = {
+export type UseIonHeaderParallaxInput = {
   image: string;
   expandedColor?: string;
   titleColor?: string;
@@ -9,19 +9,19 @@ export type UseIonParallaxHeaderInput = {
   showBarButtons?: boolean;
 };
 
-export type UseIonParallaxHeaderResult = {
+export type UseIonHeaderParallaxResult = {
   ref: React.RefObject<any>;
   loading: boolean;
 };
 
-export function useIonParallaxHeader({
+export function useIonHeaderParallax({
   image,
   defaultImage = image,
   titleColor = '#AAA',
   expandedColor = '#313131',
   maximumHeight = 300,
   showBarButtons = false,
-}: UseIonParallaxHeaderInput): UseIonParallaxHeaderResult {
+}: UseIonHeaderParallaxInput): UseIonHeaderParallaxResult {
   const [ticking, setTicking] = React.useState<boolean>(false);
   const [loading, setLoading] = React.useState<boolean>(true);
 

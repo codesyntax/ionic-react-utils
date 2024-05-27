@@ -12,11 +12,11 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { useIonParallaxHeader } from '../../lib/main';
+import { useIonHeaderParallax } from '../../lib/main';
 import MarkDown from '../components/MarkDown';
 
-const IonParallaxHeaderPage: React.FC = () => {
-  const { ref } = useIonParallaxHeader({
+const IonHeaderParallaxPage: React.FC = () => {
+  const { ref } = useIonHeaderParallax({
     image: 'https://picsum.photos/1080',
     expandedColor: 'var(--ion-color-dark)',
     titleColor: 'var(--ion-color-dark)',
@@ -29,7 +29,7 @@ const IonParallaxHeaderPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>useIonHeaderCollapse</IonTitle>
+          <IonTitle>useIonHeaderParallax</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -41,12 +41,12 @@ const IonParallaxHeaderPage: React.FC = () => {
           <IonCardContent>
             <MarkDown
               markdown={`~~~js
-import { useIonParallaxHeader } from '@codesyntax/ionic-react-utils';
+import { useIonHeaderParallax } from '@codesyntax/ionic-react-utils';
 ~~~`}
             />
             <MarkDown
               markdown={`~~~js
-const { ref } = useIonParallaxHeader({
+const { ref } = useIonHeaderParallax({
   image: 'https://picsum.photos/1080',
   titleColor: 'black',
   expandedColor: 'var(--ion-color-dark)',
@@ -83,4 +83,4 @@ return (
   );
 };
 
-export default IonParallaxHeaderPage;
+export default IonHeaderParallaxPage;

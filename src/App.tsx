@@ -35,7 +35,8 @@ import './theme/variables.css';
 import InnerHTMLPage from './pages/InnerHTMLPage';
 import IonPasswordInputPage from './pages/IonPasswordInputPage';
 import IonHeaderCollapsePage from './pages/IonHeaderCollapsePage';
-import IonParallaxHeaderPage from './pages/IonParallaxHeaderPage';
+import IonHeaderParallaxPage from './pages/IonHeaderParallaxPage';
+import IonPhotoViewerPage from './pages/IonPhotoViewerPage';
 
 setupIonicReact();
 
@@ -58,8 +59,11 @@ const App: React.FC = () => {
             <Route path="/docs/use-ion-header-collapse" exact={true}>
               <IonHeaderCollapsePage />
             </Route>
-            <Route path="/docs/use-ion-parallax-header" exact={true}>
-              <IonParallaxHeaderPage />
+            <Route path="/docs/use-ion-header-parallax" exact={true}>
+              <IonHeaderParallaxPage />
+            </Route>
+            <Route path="/docs/use-pinch-to-zoom" exact={true}>
+              <IonPhotoViewerPage />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
