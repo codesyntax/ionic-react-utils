@@ -65,7 +65,7 @@ const rawHTML = ${rawHTML};
             <IonCardTitle>Render HTML from URL</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
-            <InnerHTML url="/test.html" />
+            <InnerHTML url="https://codesyntax.github.io/ionic-react-utils/test.html" />
 
             <MarkDown
               markdown={`~~~js
@@ -74,7 +74,7 @@ import { InnerHTML } from '@codesyntax/ionic-react-utils';
             />
             <MarkDown
               markdown={`~~~js
-<InnerHTML url="https://somepage.io/test." />
+<InnerHTML url="https://codesyntax.github.io/ionic-react-utils/test.html" />
 ~~~`}
             />
           </IonCardContent>

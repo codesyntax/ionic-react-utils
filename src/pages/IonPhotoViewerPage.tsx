@@ -35,8 +35,8 @@ const IonPhotoViewerPage: React.FC = () => {
       <IonContent>
         <IonCard mode="ios">
           <IonCardHeader>
-            <IonCardTitle>Pinch to zoom</IonCardTitle>
             <IonCardSubtitle>Only available for mobile</IonCardSubtitle>
+            <IonCardTitle>Pinch to zoom</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
             <div {...containerProps}>
