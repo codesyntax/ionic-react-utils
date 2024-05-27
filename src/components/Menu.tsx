@@ -22,6 +22,7 @@ interface AppPage {
   url: string;
   icon: string;
   title: string;
+  type: 'component'|'hook'
 }
 
 const appPages: AppPage[] = [
@@ -29,31 +30,37 @@ const appPages: AppPage[] = [
     title: 'IonParallaxHeader',
     url: '/folder/IonParallaxHeader',
     icon: albumsOutline,
+    type: 'hook',
   },
   {
     title: 'IonPhotoViewer',
     url: '/folder/IonPhotoViewer',
     icon: imageOutline,
+    type: 'component',
   },
   {
     title: 'IonPasswordInput',
     url: '/docs/ion-password-input',
     icon: eyeOutline,
+    type: 'component',
   },
   {
     title: 'IonUserAvatar',
     url: '/folder/IonUserAvatar',
     icon: personCircleOutline,
+    type: 'component',
   },
   {
-    title: 'IonHeaderCollapse',
-    url: '/folder/IonHeaderCollapse',
+    title: 'useIonHeaderCollapse',
+    url: '/docs/use-ion-header-collapse',
     icon: chevronCollapseOutline,
+    type: 'hook',
   },
   {
     title: 'InnerHTML',
     url: '/docs/inner-html',
     icon: codeWorkingOutline,
+    type: 'component',
   },
 ];
 
@@ -70,45 +77,66 @@ const Menu: React.FC = () => {
           <IonNote>
             A suite of components and utilities for Ionic Framework with React
           </IonNote>
-
-          {appPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem
-                  className={
-                    location.pathname === appPage.url ? 'selected' : ''
-                  }
-                  routerLink={appPage.url}
-                  routerDirection="none"
-                  lines="none"
-                  detail={false}
-                >
-                  <IonIcon
-                    aria-hidden="true"
-                    slot="start"
-                    icon={appPage.icon}
-                  />
-                  <IonLabel>
-                    {appPage.title}
-                    {/* <p>A hook to modify the default behavior of the header</p> */}
-                  </IonLabel>
-                  {/* <small>A hook</small> */}
-                  {/* <small>Hook</small> */}
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
+          <h6>Components</h6>
+          {appPages
+            .filter((item) => item.type === 'component')
+            .map((appPage, index) => {
+              return (
+                <IonMenuToggle key={index} autoHide={false}>
+                  <IonItem
+                    className={
+                      location.pathname === appPage.url ? 'selected' : ''
+                    }
+                    routerLink={appPage.url}
+                    routerDirection="none"
+                    lines="none"
+                    detail={false}
+                  >
+                    <IonIcon
+                      aria-hidden="true"
+                      slot="start"
+                      icon={appPage.icon}
+                    />
+                    <IonLabel>{appPage.title}</IonLabel>
+                  </IonItem>
+                </IonMenuToggle>
+              );
+            })}
+          <h6>Hooks</h6>
+          {appPages
+            .filter((item) => item.type === 'hook')
+            .map((appPage, index) => {
+              return (
+                <IonMenuToggle key={index} autoHide={false}>
+                  <IonItem
+                    className={
+                      location.pathname === appPage.url ? 'selected' : ''
+                    }
+                    routerLink={appPage.url}
+                    routerDirection="none"
+                    lines="none"
+                    detail={false}
+                  >
+                    <IonIcon
+                      aria-hidden="true"
+                      slot="start"
+                      icon={appPage.icon}
+                    />
+                    <IonLabel>{appPage.title}</IonLabel>
+                  </IonItem>
+                </IonMenuToggle>
+              );
+            })}
         </IonList>
 
-        <IonList id="labels-list">
+        {/* <IonList id="labels-list">
           <IonListHeader>Hooks</IonListHeader>
           {labels.map((label, index) => (
             <IonItem lines="none" key={index}>
-              {/* <IonIcon aria-hidden="true" slot="start" icon={bookmarkOutline} /> */}
               <IonLabel>{label}</IonLabel>
             </IonItem>
           ))}
-        </IonList>
+        </IonList> */}
         {/* <IonNote>
           Developed by{' '}
           <a href="https://codesyntax.com" target="_blank">
@@ -118,7 +146,7 @@ const Menu: React.FC = () => {
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonItem lines='none'>
+          <IonItem lines="none">
             <IonLabel>
               Developed by {'     '}
               <a href="https://codesyntax.com" target="_blank">

@@ -35,6 +35,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import InnerHTMLPage from './pages/InnerHTMLPage';
 import IonPasswordInputPage from './pages/IonPasswordInputPage';
+import IonHeaderCollapsePage from './pages/IonHeaderCollapsePage';
 
 setupIonicReact();
 
@@ -56,6 +57,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/docs/ion-password-input" exact={true}>
               <IonPasswordInputPage />
+            </Route>
+            <Route path="/docs/use-ion-header-collapse" exact={true}>
+              <IonHeaderCollapsePage />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
