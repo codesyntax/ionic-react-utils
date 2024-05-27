@@ -2,7 +2,6 @@ import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/r
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
-import Page from './pages/Page';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,6 +35,7 @@ import './theme/variables.css';
 import InnerHTMLPage from './pages/InnerHTMLPage';
 import IonPasswordInputPage from './pages/IonPasswordInputPage';
 import IonHeaderCollapsePage from './pages/IonHeaderCollapsePage';
+import IonParallaxHeaderPage from './pages/IonParallaxHeaderPage';
 
 setupIonicReact();
 
@@ -47,10 +47,7 @@ const App: React.FC = () => {
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/folder/Inbox" />
-            </Route>
-            <Route path="/folder/:name" exact={true}>
-              <Page />
+              <Redirect to="/docs/inner-html" />
             </Route>
             <Route path="/docs/inner-html" exact={true}>
               <InnerHTMLPage />
@@ -60,6 +57,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/docs/use-ion-header-collapse" exact={true}>
               <IonHeaderCollapsePage />
+            </Route>
+            <Route path="/docs/use-ion-parallax-header" exact={true}>
+              <IonParallaxHeaderPage />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

@@ -27,12 +27,6 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'IonParallaxHeader',
-    url: '/folder/IonParallaxHeader',
-    icon: albumsOutline,
-    type: 'hook',
-  },
-  {
     title: 'IonPhotoViewer',
     url: '/folder/IonPhotoViewer',
     icon: imageOutline,
@@ -51,20 +45,26 @@ const appPages: AppPage[] = [
     type: 'component',
   },
   {
-    title: 'useIonHeaderCollapse',
-    url: '/docs/use-ion-header-collapse',
-    icon: chevronCollapseOutline,
-    type: 'hook',
-  },
-  {
     title: 'InnerHTML',
     url: '/docs/inner-html',
     icon: codeWorkingOutline,
     type: 'component',
   },
+  {
+    title: 'useIonParallaxHeader',
+    url: '/docs/use-ion-parallax-header',
+    icon: albumsOutline,
+    type: 'hook',
+  },
+  {
+    title: 'useIonHeaderCollapse',
+    url: '/docs/use-ion-header-collapse',
+    icon: chevronCollapseOutline,
+    type: 'hook',
+  },
 ];
 
-const labels = ['useAPI', 'useVisibleTabs', 'Notes', 'Work', 'Travel', 'Reminders'];
+// const labels = ['useAPI', 'useVisibleTabs', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
   const location = useLocation();

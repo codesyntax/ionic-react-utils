@@ -12,11 +12,16 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { UseIonHeaderCollapse, useIonHeaderCollapse } from '../../lib/main';
+import { useIonParallaxHeader } from '../../lib/main';
 import MarkDown from '../components/MarkDown';
 
-const IonHeaderCollapsePage: React.FC = () => {
-  const { ref } = useIonHeaderCollapse({} as UseIonHeaderCollapse);
+const IonParallaxHeaderPage: React.FC = () => {
+  const { ref } = useIonParallaxHeader({
+    image: 'https://picsum.photos/1080',
+    expandedColor: 'var(--ion-color-dark)',
+    titleColor: 'var(--ion-color-dark)',
+    showBarButtons: true,
+  });
   return (
     <IonPage>
       <IonHeader ref={ref}>
@@ -28,7 +33,7 @@ const IonHeaderCollapsePage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
+      <IonContent>
         <IonCard mode="ios">
           <IonCardHeader>
             <IonCardTitle>How to use</IonCardTitle>
@@ -36,13 +41,18 @@ const IonHeaderCollapsePage: React.FC = () => {
           <IonCardContent>
             <MarkDown
               markdown={`~~~js
-import { useIonHeaderCollapse } from '@codesyntax/ionic-react-utils';
+import { useIonParallaxHeader } from '@codesyntax/ionic-react-utils';
 ~~~`}
             />
             <MarkDown
               markdown={`~~~js
-const { ref } = useIonHeaderCollapse({} as UseIonHeaderCollapse);
-
+const { ref } = useIonParallaxHeader({
+  image: 'https://picsum.photos/1080',
+  titleColor: 'black',
+  expandedColor: 'var(--ion-color-dark)',
+  titleColor: 'var(--ion-color-dark)',
+  showBarButtons: true,
+});
 return (
   <IonPage>
       <IonHeader ref={ref}>
@@ -50,9 +60,7 @@ return (
           <IonTitle>Ionic header</IonTitle>
         </IonToolbar>
       </IonHeader>
-    <IonContent fullscreen>
       ...
-    </IonContent>
   </IonPage>
 )
 ~~~`}
@@ -75,4 +83,4 @@ return (
   );
 };
 
-export default IonHeaderCollapsePage;
+export default IonParallaxHeaderPage;
