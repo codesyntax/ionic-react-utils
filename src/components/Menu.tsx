@@ -1,5 +1,4 @@
 import {
-  IonChip,
   IonContent,
   IonFooter,
   IonIcon,
@@ -10,19 +9,24 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
-  IonTitle,
   IonToolbar,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { albumsOutline, archiveOutline, archiveSharp, bookmarkOutline, chevronCollapseOutline, codeWorkingOutline, eyeOutline, heartOutline, heartSharp, imageOutline, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, personCircleOutline, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+  albumsOutline,
+  chevronCollapseOutline,
+  codeWorkingOutline,
+  eyeOutline,
+  imageOutline,
+} from 'ionicons/icons';
 import './Menu.css';
-
+import { version } from '../../package.json';
 interface AppPage {
   url: string;
   icon: string;
   title: string;
-  type: 'component'|'hook'
+  type: 'component' | 'hook';
 }
 
 const appPages: AppPage[] = [
@@ -32,12 +36,12 @@ const appPages: AppPage[] = [
     icon: eyeOutline,
     type: 'component',
   },
-  {
-    title: 'IonUserAvatar',
-    url: '/folder/IonUserAvatar',
-    icon: personCircleOutline,
-    type: 'component',
-  },
+  // {
+  //   title: 'IonUserAvatar',
+  //   url: '/folder/IonUserAvatar',
+  //   icon: personCircleOutline,
+  //   type: 'component',
+  // },
   {
     title: 'InnerHTML',
     url: '/docs/inner-html',
@@ -128,21 +132,7 @@ const Menu: React.FC = () => {
               );
             })}
         </IonList>
-
-        {/* <IonList id="labels-list">
-          <IonListHeader>Hooks</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList> */}
-        {/* <IonNote>
-          Developed by{' '}
-          <a href="https://codesyntax.com" target="_blank">
-            CodeSyntax
-          </a>
-        </IonNote> */}
+        <p>Latest version: {version}</p>
       </IonContent>
       <IonFooter>
         <IonToolbar>
