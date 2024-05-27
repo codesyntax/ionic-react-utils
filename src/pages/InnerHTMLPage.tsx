@@ -11,7 +11,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { InnerHTML } from '../../lib';
+import { InnerHTML } from '../../lib/main';
 import MarkDown from '../components/MarkDown';
 
 const InnerHTMLPage: React.FC = () => {

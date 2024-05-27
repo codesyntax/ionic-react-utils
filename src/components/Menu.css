@@ -110,4 +110,8 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
-} 
+}
+
+ion-list h6{
+    padding-left: 8px;
+}

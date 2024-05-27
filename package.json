@@ -1,8 +1,12 @@
 {
-  "name": "ionic-react-utils",
-  "private": true,
+  "name": "@codesyntax/ionic-react-utils",
   "version": "0.0.1",
   "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --mode production",
@@ -10,40 +14,47 @@
     "test.e2e": "cypress run",
     "test.unit": "vitest",
     "lint": "eslint",
-    "build-lib": "tsc --p ./tsconfig-build-lib.json && vite build --mode lib"
+    "build:docs": "tsc && vite build --mode production",
+    "build:lib": "tsc --p ./tsconfig-build-lib.json && vite build --mode lib"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@ionic/react": "^8.0.0",
-    "@ionic/react-router": "^8.0.0",
-    "@types/react-router": "^5.1.20",
-    "@types/react-router-dom": "^5.3.3",
-    "ionicons": "^7.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-markdown": "^9.0.1",
-    "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4",
-    "react-syntax-highlighter": "^15.5.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "6.0.0",
+    "@ionic/react": "^8.0.0",
+    "@ionic/react-router": "^8.0.0",
     "@testing-library/dom": ">=7.21.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-router": "^5.1.20",
+    "@types/react-router-dom": "^5.3.3",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-legacy": "^5.0.0",
     "@vitejs/plugin-react": "^4.0.1",
     "cypress": "^13.5.0",
     "eslint": "^8.35.0",
     "eslint-plugin-react": "^7.32.2",
+    "glob": "^10.4.1",
+    "ionicons": "^7.0.0",
     "jsdom": "^22.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4",
+    "react-syntax-highlighter": "^15.5.0",
+    "release-it": "^17.3.0",
     "terser": "^5.4.0",
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-lib-inject-css": "^2.1.1",
     "vitest": "^0.34.6"
   },
-  "description": "An Ionic project"
+  "description": "A suite of components and utilities for Ionic Framework with React"
 }

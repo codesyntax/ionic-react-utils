@@ -11,15 +11,10 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import { IonPasswordInput } from '../../lib';
+import { IonPasswordInput } from '../../lib/main';
 import MarkDown from '../components/MarkDown';
 // import Markdown from 'react-markdown';
 const IonPasswordInputPage: React.FC = () => {
-  const doc1 = `
-~~~js
-import { IonPasswordInput } from '@codesyntax/ionic-react-utils';
-
-~~~`;
   return (
     <IonPage>
       <IonHeader>
@@ -79,6 +74,7 @@ import { IonPasswordInput } from '@codesyntax/ionic-react-utils';
               label="Outline password input"
               labelPlacement="floating"
               fill="outline"
+              mode="md"
             />
             <MarkDown
               markdown={`~~~js
@@ -91,6 +87,7 @@ import { IonPasswordInput } from '@codesyntax/ionic-react-utils';
     label="Outline password input"
     labelPlacement="floating"
     fill="outline"
+    mode="md"
 />
 ~~~`}
             />
@@ -101,11 +98,12 @@ import { IonPasswordInput } from '@codesyntax/ionic-react-utils';
           <IonCardHeader>
             <IonCardTitle>Solid password input</IonCardTitle>
           </IonCardHeader>
-          <IonCardContent mode="md">
+          <IonCardContent>
             <IonPasswordInput
               label="Solid password input"
               labelPlacement="floating"
               fill="solid"
+              mode="md"
             />
             <MarkDown
               markdown={`~~~js
@@ -118,6 +116,7 @@ import { IonPasswordInput } from '@codesyntax/ionic-react-utils';
     label="Solid password input"
     labelPlacement="floating"
     fill="solid"
+    mode="md"
 />
 ~~~`}
             />
