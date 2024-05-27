@@ -1,2 +1,13 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+ion-split-pane {
+  --side-width: 300px;
+  --side-max-width: 300px;
+
+  --border: 2px solid var(--ion-color-light);
+}
+
+code{
+    /* background-color: var(--ion-color-light); */
+    /* padding: 1rem; */
+}

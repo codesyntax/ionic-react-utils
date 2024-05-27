@@ -29,10 +29,11 @@ import '@ionic/react/css/display.css';
 
 /* import '@ionic/react/css/palettes/dark.always.css'; */
 /* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
+// import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import InnerHTMLPage from './pages/InnerHTMLPage';
 
 setupIonicReact();
 
@@ -48,6 +49,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/folder/:name" exact={true}>
               <Page />
+            </Route>
+            <Route path="/docs/inner-html" exact={true}>
+              <InnerHTMLPage />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

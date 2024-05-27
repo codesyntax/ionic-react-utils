@@ -1,5 +1,7 @@
 import {
+  IonChip,
   IonContent,
+  IonFooter,
   IonIcon,
   IonItem,
   IonLabel,
@@ -8,59 +10,54 @@ import {
   IonMenu,
   IonMenuToggle,
   IonNote,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { albumsOutline, archiveOutline, archiveSharp, bookmarkOutline, chevronCollapseOutline, codeWorkingOutline, eyeOutline, heartOutline, heartSharp, imageOutline, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, personCircleOutline, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
   url: string;
-  iosIcon: string;
-  mdIcon: string;
+  icon: string;
   title: string;
 }
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    title: 'IonParallaxHeader',
+    url: '/folder/IonParallaxHeader',
+    icon: albumsOutline,
   },
   {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'IonPhotoViewer',
+    url: '/folder/IonPhotoViewer',
+    icon: imageOutline,
   },
   {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    title: 'IonPasswordInput',
+    url: '/folder/IonPasswordInput',
+    icon: eyeOutline,
   },
   {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    title: 'IonUserAvatar',
+    url: '/folder/IonUserAvatar',
+    icon: personCircleOutline,
   },
   {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    title: 'IonHeaderCollapse',
+    url: '/folder/IonHeaderCollapse',
+    icon: chevronCollapseOutline,
   },
   {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
-  }
+    title: 'InnerHTML',
+    url: '/docs/inner-html',
+    icon: codeWorkingOutline,
+  },
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+const labels = ['useAPI', 'useVisibleTabs', 'Notes', 'Work', 'Travel', 'Reminders'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -69,14 +66,34 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>Ionic React Utils</IonListHeader>
+          <IonNote>
+            A suite of components and utilities for Ionic Framework with React
+          </IonNote>
+
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
+                <IonItem
+                  className={
+                    location.pathname === appPage.url ? 'selected' : ''
+                  }
+                  routerLink={appPage.url}
+                  routerDirection="none"
+                  lines="none"
+                  detail={false}
+                >
+                  <IonIcon
+                    aria-hidden="true"
+                    slot="start"
+                    icon={appPage.icon}
+                  />
+                  <IonLabel>
+                    {appPage.title}
+                    {/* <p>A hook to modify the default behavior of the header</p> */}
+                  </IonLabel>
+                  {/* <small>A hook</small> */}
+                  {/* <small>Hook</small> */}
                 </IonItem>
               </IonMenuToggle>
             );
@@ -84,15 +101,34 @@ const Menu: React.FC = () => {
         </IonList>
 
         <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
+          <IonListHeader>Hooks</IonListHeader>
           {labels.map((label, index) => (
             <IonItem lines="none" key={index}>
-              <IonIcon aria-hidden="true" slot="start" icon={bookmarkOutline} />
+              {/* <IonIcon aria-hidden="true" slot="start" icon={bookmarkOutline} /> */}
               <IonLabel>{label}</IonLabel>
             </IonItem>
           ))}
         </IonList>
+        {/* <IonNote>
+          Developed by{' '}
+          <a href="https://codesyntax.com" target="_blank">
+            CodeSyntax
+          </a>
+        </IonNote> */}
       </IonContent>
+      <IonFooter>
+        <IonToolbar>
+          <IonItem lines='none'>
+            <IonLabel>
+              Developed by {'     '}
+              <a href="https://codesyntax.com" target="_blank">
+                {' '}
+                CodeSyntax
+              </a>
+            </IonLabel>
+          </IonItem>
+        </IonToolbar>
+      </IonFooter>
     </IonMenu>
   );
 };
