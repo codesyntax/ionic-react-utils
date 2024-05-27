@@ -1,5 +1,6 @@
 {
   "name": "@codesyntax/ionic-react-utils",
+  "description": "A suite of components and utilities for Ionic Framework with React",
   "version": "0.0.1",
   "type": "module",
   "main": "dist/main.js",
@@ -57,5 +58,7 @@
     "vite-plugin-lib-inject-css": "^2.1.1",
     "vitest": "^0.34.6"
   },
-  "description": "A suite of components and utilities for Ionic Framework with React"
+  "publishConfig": {
+    "access": "public"
+  }
 }
