@@ -15,7 +15,8 @@
     "test.unit": "vitest",
     "lint": "eslint",
     "build:docs": "tsc && vite build --mode production",
-    "build:lib": "tsc --p ./tsconfig-build-lib.json && vite build --mode lib"
+    "build:lib": "tsc --p ./tsconfig-build-lib.json && vite build --mode lib",
+    "release": "release-it"
   },
   "peerDependencies": {
     "@ionic/react": "^8.0.0",
