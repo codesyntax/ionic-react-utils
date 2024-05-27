@@ -9,6 +9,11 @@
     "dist"
   ],
   "homepage": "https://codesyntax.github.io/ionic-react-utils",
+  "keywords": [
+    "ionic",
+    "ionic-framework",
+    "react"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build --mode production",
