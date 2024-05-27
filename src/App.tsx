@@ -37,6 +37,7 @@ import IonPasswordInputPage from './pages/IonPasswordInputPage';
 import IonHeaderCollapsePage from './pages/IonHeaderCollapsePage';
 import IonHeaderParallaxPage from './pages/IonHeaderParallaxPage';
 import IonPhotoViewerPage from './pages/IonPhotoViewerPage';
+import HomePage from './pages/HomePage';
 
 setupIonicReact();
 
@@ -47,22 +48,29 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
-            <Route path="/" exact={true}>
-              <Redirect to="/docs/inner-html" />
+            <Route path="/ionic-react-utils/" exact={true}>
+              {/* <Redirect to="/ionic-react-utils/inner-html" /> */}
+              <HomePage />
             </Route>
-            <Route path="/docs/inner-html" exact={true}>
+            <Route path="/ionic-react-utils/inner-html" exact={true}>
               <InnerHTMLPage />
             </Route>
-            <Route path="/docs/ion-password-input" exact={true}>
+            <Route path="/ionic-react-utils/ion-password-input" exact={true}>
               <IonPasswordInputPage />
             </Route>
-            <Route path="/docs/use-ion-header-collapse" exact={true}>
+            <Route
+              path="/ionic-react-utils/use-ion-header-collapse"
+              exact={true}
+            >
               <IonHeaderCollapsePage />
             </Route>
-            <Route path="/docs/use-ion-header-parallax" exact={true}>
+            <Route
+              path="/ionic-react-utils/use-ion-header-parallax"
+              exact={true}
+            >
               <IonHeaderParallaxPage />
             </Route>
-            <Route path="/docs/use-pinch-to-zoom" exact={true}>
+            <Route path="/ionic-react-utils/use-pinch-to-zoom" exact={true}>
               <IonPhotoViewerPage />
             </Route>
           </IonRouterOutlet>

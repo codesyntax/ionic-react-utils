@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
       build: {
         outDir: './dist-docs',
       },
+      base: '/ionic-react-utils/',
     };
   }
 
@@ -72,5 +73,6 @@ export default defineConfig(({ mode }) => {
       environment: 'jsdom',
       setupFiles: './src/setupTests.ts',
     },
+    base: '/ionic-react-utils/',
   };
 });
